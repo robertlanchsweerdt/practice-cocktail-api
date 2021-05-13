@@ -45,8 +45,11 @@ function showEntry() {
 }
 
 function cocktailsEventListener() {
-  let cocktails = document.querySelector('a');
+  let cocktails = document.querySelectorAll('a > .cocktail');
   cocktails.forEach((cocktail) => {
-    console.log(cocktail.children);
+    cocktail.addEventListener('click', () => {
+      const selectedCocktail = cocktail.dataset;
+      sessionStorage.setItem('cocktail', JSON.stringify(selectedCocktail));
+    });
   });
 }

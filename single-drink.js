@@ -1,14 +1,14 @@
-console.log('online');
+searchDrinks();
 
-import searchDrinks from './all-drinks.js';
+function searchDrinks(searchQuery) {
+  const selectedCocktail = JSON.parse(sessionStorage.getItem('cocktail')).id;
+  console.log(selectedCocktail);
 
-const drinkName = document.querySelector('.drink-name');
-const drinkDesc = document.querySelector('.drink-desc');
-const drinkIngredients = document.querySelector('.drink-ingredients');
+  const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${selectedCocktail}`;
 
-window.addEventListener('load', singleDrink);
-
-function singleDrink() {
-  const loading = document.querySelector('.loading');
-  loading.classList.add('hide-loading');
+  fetch(API_URL)
+    .then((res) => res.json())
+    .then((data) => {
+      console.log(data);
+    });
 }
