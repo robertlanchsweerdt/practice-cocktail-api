@@ -1,0 +1,28 @@
+{
+  "name": "practice-cocktail-api",
+  "quokka": {
+    "plugins": [
+      "jsdom-quokka-plugin"
+    ]
+  },
+  "version": "1.0.0",
+  "description": "Demonstration of API using the \"thecocktaildb.com\"",
+  "main": "all-drinks.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertlanchsweerdt/practice-cocktail-api.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertlanchsweerdt/practice-cocktail-api/issues"
+  },
+  "homepage": "https://github.com/robertlanchsweerdt/practice-cocktail-api#readme",
+  "devDependencies": {
+    "jsdom": "^16.5.3"
+  }
+}
