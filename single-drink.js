@@ -2,8 +2,6 @@ searchDrinks();
 
 function searchDrinks(searchQuery) {
   const selectedCocktail = JSON.parse(sessionStorage.getItem('cocktail')).id;
-  console.log(selectedCocktail);
-
   const API_URL = `https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${selectedCocktail}`;
 
   fetch(API_URL)
@@ -15,13 +13,13 @@ function searchDrinks(searchQuery) {
 }
 
 function displaySingle(data, ingredientsList) {
-  console.log(data);
   const drinkName = document.querySelector('.drink-name');
   const drinkDesc = document.querySelector('.drink-desc');
   const drinkImage = document.querySelector('.drink-img');
   const drinkIngredientsList = document.querySelector('.drink-ingredients');
   const activeIngredients = ingredientsList.filter((value) => value != null);
 
+  document.title = data.strDrink;
   drinkName.innerText = data.strDrink;
   drinkDesc.innerText = data.strInstructions;
   drinkImage.src = data.strDrinkThumb;
@@ -34,8 +32,6 @@ function displaySingle(data, ingredientsList) {
       </li>`;
     })
     .join('');
-
-  console.log(activeIngredientsList);
 
   drinkIngredientsList.innerHTML = activeIngredientsList;
 
